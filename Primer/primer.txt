@@ -1,0 +1,12 @@
+install typesxript:
+Primer>npm install -g typescript
+
+2nd: tsc practices/326.ts
+
+3rd: node 325.js
+
+**********
+npm install
+npm update
+
+ng serve

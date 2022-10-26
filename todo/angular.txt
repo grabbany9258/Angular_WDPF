@@ -1,0 +1,14 @@
+1st step: open cmd -> node
+2nd step:  cmp-v
+3rd step: npm install --global @angular/cli@14.2.6
+4th step: check angular: ng v
+check git : git --version
+5th step: ng new wdpf51
+
+6th todo theke cmd open kore ->ng serve
+7th step: copy kore browswer a paste: http://localhost:4200/
+
+8th step: ctrl+c diye ber hoye then -> npm install bootstrap@4.1.1
+9th step: bootstrap add korte hoy angular.json file a add korte hbe. 27 nb line
+
+10th step: ng serve --port 3000 --open
