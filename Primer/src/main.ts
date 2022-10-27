@@ -1,7 +1,10 @@
-let myArray: (number | string | boolean)[] = [100, "Adam", true];
-// let otherArray = [...myArray, 200, "Bob", false];
-// for (let i = 0; i < otherArray.length; i++) {
-// console.log("Index " + i + ": " + otherArray[i]);
-// }
-// console.log("---");
- otherArray.forEach((value, index) => console.log("Index " + index + ": " + value));
+import { Observable, Observer, Subject } from "rxjs";
+
+function recieveEvents(observable: Observable<string>) {
+observable.subscribe({
+next: str => {
+console.log(`Event received: ${str}`);
+},
+complete: () => console.log("Sequence ended")
+});
+}

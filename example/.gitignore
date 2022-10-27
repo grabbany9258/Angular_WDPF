@@ -1,28 +1,13 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
 # Compiled output
-todo/dist
-todo/tmp
-todo/out-tsc
-todo/bazel-out
-
-# Compiled output
-Primer/dist
-Primer/tmp
-Primer/out-tsc
-Primer/bazel-out
-
-# Compiled output
-example/dist
-example/tmp
-example/out-tsc
-example/bazel-out
-
+/dist
+/tmp
+/out-tsc
+/bazel-out
 
 # Node
-todo/node_modules
-Primer/node_modules
-example/node_modules
+/node_modules
 npm-debug.log
 yarn-error.log
 
