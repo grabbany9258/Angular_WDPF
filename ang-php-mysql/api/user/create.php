@@ -1,22 +1,23 @@
 <?php
-include 'database.php';
+include '../database.php';
 $postdata = file_get_contents("php://input");
 if (isset($postdata) && !empty($postdata)) {
     $request = json_decode($postdata, true);
     // Validate.
-    if (trim($request['name']) === '' || trim($request['user']) < 0) {
+    if (trim($request['name']) === '' || trim($request['email']) === '' ) {
         return http_response_code(400);
     }
     $name = mysqli_real_escape_string($db, trim($request['name']));
-    $price = mysqli_real_escape_string($db, (int)$request['price']);
-    $sql = "INSERT INTO products (id,name,price) VALUES (null,'$name',$price)";
+    $email = mysqli_real_escape_string($db, $request['email']);
+    $password = mysqli_real_escape_string($db, $request['password']);
+    $sql = "INSERT INTO users (id,name,email,password) VALUES (null,'$name','$email', '$password')";
     if ($db->query($sql)) {
         http_response_code(201);
-        $product = [
+        $user = [
             'id' => mysqli_insert_id($db), 'name' => $name,
-            'price' => $price
+            'email' => $email, 'password' => $password
         ];
-        echo json_encode($product);
+        echo json_encode($user);
     } else {
         http_response_code(422);
     }

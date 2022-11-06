@@ -1,0 +1,3 @@
+main.ts-> app.module.ts->app.component.ts->
+
+4) api a file 3)  user service.ts 2)  user component.ts 1) user component.html
