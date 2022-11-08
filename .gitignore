@@ -13,16 +13,31 @@ Primer/out-tsc
 Primer/bazel-out
 
 # Compiled output
+ang-php-mysql/ang-crud/dist
+ang-php-mysql/ang-crud/tmp
+ang-php-mysql/ang-crud/out-tsc
+ang-php-mysql/ang-crud/bazel-out
+
+
+
+# Compiled output
 example/dist
 example/tmp
 example/out-tsc
 example/bazel-out
+
+# Compiled output
+SportsStore/dist
+SportsStore/tmp
+SportsStore/out-tsc
+SportsStore/bazel-out
 
 
 # Node
 todo/node_modules
 Primer/node_modules
 example/node_modules
+SportsStore/node_modules
 npm-debug.log
 yarn-error.log
 
