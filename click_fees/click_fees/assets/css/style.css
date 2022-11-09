@@ -1743,7 +1743,7 @@ label{
 }
 .btn-primary {
     color: #fff;
-    background-color: #3c21f7;
+    background-color: #3291e6;
     border-color: #3c21f7;
 }
 .card-box {
@@ -1807,6 +1807,9 @@ label{
 }
 .bg-red {
     background-color: #ea3438 !important;
+}
+.bg-ciyan {
+  background-color: #24becf !important;
 }
 #page {
     display: none;

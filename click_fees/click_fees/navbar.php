@@ -4,11 +4,14 @@
 		text-indent:10px;
 	}
 	nav#sidebar{
-		/*background: url(assets/uploads/<?php echo $_SESSION['system']['cover_img'] ?>) !important*/
+		background: url(assets/uploads/<?php echo $_SESSION['system_settings']['cover_img'] ?>) !important
 	}
 </style>
 
+
 <nav id="sidebar" class='mx-lt-5 bg-white' >
+	
+
 		
 		<div class="sidebar-list">
 				<a href="index.php?page=home" class="nav-item nav-home"><span class='icon-field'><i class="fa fa-tachometer-alt "></i></span> Dashboard</a>		
@@ -24,8 +27,10 @@
 				<a href="ajax.php?action=logout" class="nav-item nav-site_settings"><span class='icon-field'><i class="fa fa-lock"></i></span> Logout</a>
 			<?php endif; ?>
 		</div>
+		
 
 </nav>
+
 
 <script>
 	$('.nav_collapse').click(function(){

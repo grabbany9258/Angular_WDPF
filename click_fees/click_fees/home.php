@@ -35,7 +35,7 @@
 		max-width: calc(100%)!important;
 	}
 </style>
-
+<div>
 <div class="containe-fluid">
 	<div class="row mt-3 ml-3 mr-3">
         <div class="col-lg-12">
@@ -92,6 +92,20 @@
                                     <div class="inner">
                                         <h3> 723 </h3>
                                         <p> Total Users </p>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 ">
+                                <div class="card-box bg-ciyan">
+                                    <div class="icon">
+                                        <i class="fa fa-users"></i>
+                                    </div>
+                                   
+                                    <div class="inner">
+                                        <h3> 70296 </h3>
+                                        <p> Total Earn </p>
                                     </div>
                                     
                                 </div>
@@ -161,6 +175,7 @@
             </div>      			
         </div>
     </div>
+</div>
 </div>
 
 <script>
