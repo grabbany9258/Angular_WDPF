@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.4
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 25, 2022 at 11:06 AM
--- Server version: 10.1.37-MariaDB
--- PHP Version: 7.1.26
+-- Generation Time: Nov 10, 2022 at 04:49 AM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 8.0.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -34,7 +33,7 @@ CREATE TABLE `courses` (
   `description` text NOT NULL,
   `level` varchar(150) NOT NULL,
   `total_amount` float NOT NULL,
-  `date_created` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `date_created` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -43,7 +42,8 @@ CREATE TABLE `courses` (
 
 INSERT INTO `courses` (`id`, `course`, `description`, `level`, `total_amount`, `date_created`) VALUES
 (1, 'BCA', 'First year of BCA', '1', 6200, '2022-05-09 22:47:56'),
-(2, 'Second year of BCA', 'This area for description', '2', 66600, '2022-05-16 17:13:05');
+(2, 'Second year of BCA', 'This area for description', '2', 66600, '2022-05-16 17:13:05'),
+(3, 'Computer Fundamentals', 'This is an fundamental course . ', 'meddium', 4000, '2022-11-08 09:30:10');
 
 -- --------------------------------------------------------
 
@@ -68,7 +68,10 @@ INSERT INTO `fees` (`id`, `course_id`, `description`, `amount`) VALUES
 (3, 2, 'Uniform Fee', 5000),
 (4, 2, 'Tuition Fee', 56000),
 (5, 2, 'Maintaince Fee', 600),
-(6, 2, 'Security Deposit', 5000);
+(6, 2, 'Security Deposit', 5000),
+(7, 3, 'monthly', 2000),
+(8, 3, 'Tiffin', 500),
+(9, 3, 'Provide books', 1500);
 
 -- --------------------------------------------------------
 
@@ -81,7 +84,7 @@ CREATE TABLE `payments` (
   `ef_id` int(30) NOT NULL,
   `amount` float NOT NULL,
   `remarks` text NOT NULL,
-  `date_created` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  `date_created` datetime NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -92,7 +95,8 @@ INSERT INTO `payments` (`id`, `ef_id`, `amount`, `remarks`, `date_created`) VALU
 (1, 1, 5000, 'Payment through Bank Account NEFT', '2022-05-09 22:49:26'),
 (2, 1, 200, 'Phone Pe', '2022-05-09 22:50:15'),
 (3, 2, 50000, 'First Installment', '2022-05-16 17:14:08'),
-(4, 2, 10000, 'Second Installment', '2022-05-16 17:14:37');
+(4, 2, 10000, 'Second Installment', '2022-05-16 17:14:37'),
+(5, 3, 50000, 'Rest are next month', '2022-11-08 09:31:10');
 
 -- --------------------------------------------------------
 
@@ -107,7 +111,7 @@ CREATE TABLE `student` (
   `contact` varchar(100) NOT NULL,
   `address` text NOT NULL,
   `email` varchar(200) NOT NULL,
-  `date_created` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `date_created` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -116,7 +120,8 @@ CREATE TABLE `student` (
 
 INSERT INTO `student` (`id`, `id_no`, `name`, `contact`, `address`, `email`, `date_created`) VALUES
 (1, '1', 'Saurabh Joshi', '9090909090', 'Shivaji Nagar, Pune', 'saurabha@gmail.com', '2022-05-09 22:47:02'),
-(2, '2', 'Bhagyashree Joshi', '8090809090', 'Plot No.8, Galaxy Heights, behind Metro Mall, Shivaji Nagar, Pune', 'bhagyashree@gmail.com', '2022-05-16 17:11:16');
+(2, '2', 'Bhagyashree Joshi', '8090809090', 'Plot No.8, Galaxy Heights, behind Metro Mall, Shivaji Nagar, Pune', 'bhagyashree@gmail.com', '2022-05-16 17:11:16'),
+(3, '123456', 'Golam rabbany', '01642541075', 'Shyamoli dhaka 1207', 'golamrabbany499@gmail.com', '2022-11-08 09:26:03');
 
 -- --------------------------------------------------------
 
@@ -130,7 +135,7 @@ CREATE TABLE `student_ef_list` (
   `ef_no` varchar(200) NOT NULL,
   `course_id` int(30) NOT NULL,
   `total_fee` float NOT NULL,
-  `date_created` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `date_created` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -139,7 +144,8 @@ CREATE TABLE `student_ef_list` (
 
 INSERT INTO `student_ef_list` (`id`, `student_id`, `ef_no`, `course_id`, `total_fee`, `date_created`) VALUES
 (1, 1, '1', 1, 6200, '2022-05-09 22:48:20'),
-(2, 2, '2', 2, 66600, '2022-05-16 17:13:25');
+(2, 2, '2', 2, 66600, '2022-05-16 17:13:25'),
+(3, 3, '123', 2, 66600, '2022-11-08 09:26:59');
 
 -- --------------------------------------------------------
 
@@ -156,6 +162,13 @@ CREATE TABLE `system_settings` (
   `about_content` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `system_settings`
+--
+
+INSERT INTO `system_settings` (`id`, `name`, `email`, `contact`, `cover_img`, `about_content`) VALUES
+(1, 'Golam rabbany', 'grb@gmail.com', '01642541075', 'Student Fess Management', 'fees');
+
 -- --------------------------------------------------------
 
 --
@@ -167,7 +180,7 @@ CREATE TABLE `users` (
   `name` text NOT NULL,
   `username` varchar(200) NOT NULL,
   `password` text NOT NULL,
-  `type` tinyint(1) NOT NULL DEFAULT '3' COMMENT '1=Admin,2=Staff'
+  `type` tinyint(1) NOT NULL DEFAULT 3 COMMENT '1=Admin,2=Staff'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -175,7 +188,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `username`, `password`, `type`) VALUES
-(1, 'Mayuri K.', 'mayuri.infospace@gmail.com', '21232f297a57a5a743894a0e4a801fc3', 1);
+(1, 'g rabbany', 'grb@gmail.com', '21232f297a57a5a743894a0e4a801fc3', 1);
 
 --
 -- Indexes for dumped tables
@@ -231,37 +244,37 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `courses`
 --
 ALTER TABLE `courses`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `fees`
 --
 ALTER TABLE `fees`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `payments`
 --
 ALTER TABLE `payments`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `student`
 --
 ALTER TABLE `student`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `student_ef_list`
 --
 ALTER TABLE `student_ef_list`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `system_settings`
 --
 ALTER TABLE `system_settings`
-  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `users`
