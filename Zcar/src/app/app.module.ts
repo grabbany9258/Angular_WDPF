@@ -11,6 +11,8 @@ import { MaintenanceComponent } from './maintenance/maintenance.component';
 import { RepairComponent } from './repair/repair.component';
 import { PriceListComponent } from './price-list/price-list.component';
 import { ContactComponent } from './contact/contact.component';
+import { PricelistService } from './services/pricelist.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,13 +24,14 @@ import { ContactComponent } from './contact/contact.component';
     MaintenanceComponent,
     RepairComponent,
     PriceListComponent,
-    ContactComponent
+    ContactComponent,
+    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,HttpClientModule
   ],
-  providers: [],
+  providers: [PricelistService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
