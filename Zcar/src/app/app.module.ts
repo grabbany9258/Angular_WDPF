@@ -13,6 +13,8 @@ import { PriceListComponent } from './price-list/price-list.component';
 import { ContactComponent } from './contact/contact.component';
 import { PricelistService } from './services/pricelist.service';
 import { HttpClientModule } from '@angular/common/http';
+import { TestComponent } from './test/test.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,11 +27,13 @@ import { HttpClientModule } from '@angular/common/http';
     RepairComponent,
     PriceListComponent,
     ContactComponent,
+    TestComponent,
+
     
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,HttpClientModule
+    AppRoutingModule,HttpClientModule, FormsModule
   ],
   providers: [PricelistService],
   bootstrap: [AppComponent]

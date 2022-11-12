@@ -1,0 +1,15 @@
+1) String interpolation:
+
+test.component.ts a variable baniye seta  test.component.html a dekhano jay {{xyz}} avabe.
+
+2 way binding korte hole :
+
+import { FormsModule } from '@angular/forms';
+
+imports a  FormsModule  dite hbe ..
+
+Test.component.html a 
+<input type="text" name="fanme" [(ngModel)]="fname">
+            <p> {{fname}} </p>
+
+test.component.ts  a fname= " ";

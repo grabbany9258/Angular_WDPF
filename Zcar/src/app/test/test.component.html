@@ -1,0 +1,64 @@
+
+    <section id="content" class="zerogrid">
+
+        <div class="sub-page">
+            <h2>This is test component</h2>
+
+ <h2>String interpoolation</h2>
+            <p>{{xyz}} {{pqr}} </p>
+
+ <h2>Property Binding</h2> 
+            <!-- <p [title]="x"></p> -->
+            <p [innerHtml]="x">Here goes text</p>
+
+            <button [disabled]="status">Click here</button>
+
+<h2>Event Binding</h2>
+            <button (click)="show(xyz)">Click here for message</button>
+
+            <hr>
+
+<h2>2 Way Binding</h2>            
+        <input type="text" name="fanme" [(ngModel)]="fname">
+            <p> {{fname}} </p>
+
+            <hr>
+
+<!-- <h2>ng If</h2>
+            <h2 *ngIf="fruits.length>0">
+                {{fruits.length}}
+            </h2> -->
+            <hr>
+
+<h2>ng Switch case</h2>
+
+            <div [ngSwitch]="fruits.length">  
+                <p *ngSwitchCase="0">Total Fruits {{fruits.length}} </p>
+                <p *ngSwitchCase="1">Total Fruits {{fruits.length}} </p>
+                <p *ngSwitchCase="2">Total Fruits {{fruits.length}} </p>
+                <p *ngSwitchCase="3">Total Fruits {{fruits.length}} </p>
+                <p *ngSwitchCase="4">Total Fruits {{fruits.length}} </p>
+                <p *ngSwitchDefault>More Fruits are there</p>
+            </div>
+            <hr>
+
+            <div [ngStyle]="{'font-size': '24px' , 'color':'red'}">
+                My division area
+
+            </div>
+
+            <hr>
+
+            <div class="p1"> My division area from css style file</div>
+
+            <hr>
+<!-- ai class ta test.component.ts a variable hisebe newa hoice & akhn a ngClass hisebe newa hoice -->
+            <div [ngClass]="p2"> My division area from Component style file</div>
+
+
+
+
+        </div>
+
+
+    </section>
