@@ -1,17 +1,15 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
 
-# ignore file and folder Node
+# # ignore file and folder Node
 
- todo/node_modules
- Primer/node_modules
- example/node_modules
- SportsStore/node_modules
- ang-php-mysql/ang-crud/node_modules
- npm-debug.log
- yarn-error.log
-
-
+#  todo/node_modules
+#  Primer/node_modules
+#  example/node_modules
+#  SportsStore/node_modules
+#  ang-php-mysql/ang-crud/node_modules
+#  npm-debug.log
+#  yarn-error.log
 
 
 
@@ -27,73 +25,82 @@
 
 
 
-# # Compiled output
-# todo/dist
-# todo/tmp
-# todo/out-tsc
-# todo/bazel-out
-
-# # Compiled output
-# Primer/dist
-# Primer/tmp
-# Primer/out-tsc
-# Primer/bazel-out
-
-# # Compiled output
-# ang-php-mysql/ang-crud/dist
-# ang-php-mysql/ang-crud/tmp
-# ang-php-mysql/ang-crud/out-tsc
-# ang-php-mysql/ang-crud/bazel-out
 
 
+# Compiled output
+angmodules/dist
+angmodules/tmp
+angmodules/out-tsc
+angmodules/bazel-out
 
-# # Compiled output
-# example/dist
-# example/tmp
-# example/out-tsc
-# example/bazel-out
+# Compiled output
+todo/dist
+todo/tmp
+todo/out-tsc
+todo/bazel-out
 
-# # Compiled output
-# SportsStore/dist
-# SportsStore/tmp
-# SportsStore/out-tsc
-# SportsStore/bazel-out
+# Compiled output
+Primer/dist
+Primer/tmp
+Primer/out-tsc
+Primer/bazel-out
+
+# Compiled output
+ang-php-mysql/ang-crud/dist
+ang-php-mysql/ang-crud/tmp
+ang-php-mysql/ang-crud/out-tsc
+ang-php-mysql/ang-crud/bazel-out
 
 
-# # Node
-# todo/node_modules
-# Primer/node_modules
-# example/node_modules
-# SportsStore/node_modules
-# npm-debug.log
-# yarn-error.log
 
-# # IDEs and editors
-# .idea/
-# .project
-# .classpath
-# .c9/
-# *.launch
-# .settings/
-# *.sublime-workspace
+# Compiled output
+example/dist
+example/tmp
+example/out-tsc
+example/bazel-out
 
-# # Visual Studio Code
-# .vscode/*
-# !.vscode/settings.json
-# !.vscode/tasks.json
-# !.vscode/launch.json
-# !.vscode/extensions.json
-# .history/*
+# Compiled output
+SportsStore/dist
+SportsStore/tmp
+SportsStore/out-tsc
+SportsStore/bazel-out
 
-# # Miscellaneous
-# /.angular/cache
-# .sass-cache/
-# /connect.lock
-# /coverage
-# /libpeerconnection.log
-# testem.log
-# /typings
 
-# # System files
-# .DS_Store
-# Thumbs.db
+# Node
+todo/node_modules
+angmodules/node_modules
+Primer/node_modules
+example/node_modules
+SportsStore/node_modules
+npm-debug.log
+yarn-error.log
+
+# IDEs and editors
+.idea/
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+# Miscellaneous
+/.angular/cache
+.sass-cache/
+/connect.lock
+/coverage
+/libpeerconnection.log
+testem.log
+/typings
+
+# System files
+.DS_Store
+Thumbs.db
